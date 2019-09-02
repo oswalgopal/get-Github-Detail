@@ -1,0 +1,7 @@
+{
+  "name": "GithubAccountInfo",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

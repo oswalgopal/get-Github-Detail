@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Get User Detail
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-item class="ion-no-margin ion-no-padding">
+  <ion-label position="floating">Enter Github Username</ion-label>
+  <ion-input [(ngModel)]="username"></ion-input>
+</ion-item>
+  <ion-buttons>
+    <ion-button (click)="GetUserDetail()"> Get Details</ion-button>
+  </ion-buttons>
+</ion-content>
