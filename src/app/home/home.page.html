@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -11,10 +11,19 @@
 
 <ion-content>
 <ion-item class="ion-no-margin ion-no-padding">
-  <ion-label position="floating">Enter Github Username</ion-label>
-  <ion-input [(ngModel)]="username"></ion-input>
+  <ion-label position="floating">
+    <ion-icon name="logo-github"></ion-icon>
+    Enter Github Username
+  </ion-label>
+  <ion-input [(ngModel)]="username" ></ion-input>
 </ion-item>
-  <ion-buttons>
+  <ion-buttons class="getDetailBtn">
     <ion-button (click)="GetUserDetail()"> Get Details</ion-button>
   </ion-buttons>
+  <ion-list>
+    <ion-item lines="none">
+        <ion-icon name="md-contact" class="icon" slot="start"></ion-icon>
+      {{UserDetail.name}}
+    </ion-item>
+  </ion-list>
 </ion-content>
