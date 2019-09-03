@@ -8,6 +8,7 @@ import {Api} from '../api/api';
 })
 export class HomePage {
   username: any;
+  GetDetail: boolean;
   UserDetail: any = {
     avatar_url: '',
     bio: '',
@@ -41,7 +42,9 @@ export class HomePage {
     updated_at: '',
     url: '',
   };
-  constructor(private api: Api) {}
+  constructor(private api: Api) {
+    this.GetDetail = false;
+  }
 
   /**
    * function to get the user detial from the api
@@ -50,6 +53,7 @@ export class HomePage {
       this.api.GetUserDetail(this.username).then(res => {
         console.log(res);
         this.UserDetail = res;
+        this.GetDetail = true;
       }).catch(err => {
         console.log(err);
       });

@@ -18,12 +18,20 @@
   <ion-input [(ngModel)]="username" ></ion-input>
 </ion-item>
   <ion-buttons class="getDetailBtn">
-    <ion-button (click)="GetUserDetail()"> Get Details</ion-button>
+    <ion-button (click)="GetUserDetail()" [disabled]="!username"> Get Details</ion-button>
   </ion-buttons>
-  <ion-list>
+  <ion-list *ngIf="GetDetail">
     <ion-item lines="none">
-        <ion-icon name="md-contact" class="icon" slot="start"></ion-icon>
-      {{UserDetail.name}}
+      <img [src]="UserDetail.avatar_url" alt="" class="avtarImage">
+    </ion-item>
+    <ion-item lines="none">
+      <p> <strong>UserName: </strong> {{UserDetail.name}}</p>
+    </ion-item>
+    <ion-item lines="none">
+      <p> <strong>Bio : </strong> {{UserDetail.bio}}</p>
+    </ion-item>
+    <ion-item lines="none">
+      <p> <strong>Blog: </strong> {{UserDetail.blog}}</p>
     </ion-item>
   </ion-list>
 </ion-content>
